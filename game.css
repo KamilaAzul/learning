@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Erica+One&family=Ribeye&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body
+{
+    display: flex;
+    font-family: Ribeye, sans-serif;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url("images/frontFaceCards/v1008-25-b.jpg");
+    position: relative;
+}
+
+.memory-game{
+    height: 550px;
+    width: 550px;
+    background-color: rgba(233, 216, 165, 0.7);    
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0px 50px 100px -20px  rgba(50, 50, 93, 0.5);
+    margin: auto;
+    top: 30px; 
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+   
+}
+.memory-card{
+    display: flex;
+    position: relative;
+    width: calc(100% / 4 - 10px);
+    height: calc(100% / 4 - 10px);
+    cursor: pointer;
+    justify-content: center;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .6s;
+    margin: 5px;
+
+}
+.memory-card:active {
+    transition: transform .4s;
+    transform: scale(0.92);
+
+  }
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+
+.memory-card.shake{
+    animation: shake .2s;
+
+}
+@keyframes shake {
+    0%{
+            transform: rotate(0deg);
+        }
+    
+        30% {
+            transform: rotate(8deg);
+        }
+        
+        60% {
+            transform: rotate(-8deg);
+        }
+        
+        100% {
+            transform: rotate(0deg);
+    }
+}
+
+  .front-face,
+  .back-face {
+   
+    height: 94%;
+    width: 94%;
+    background: rgb(181, 145, 94);
+    border-radius: 10px;
+    box-shadow: 1px 10px 10px rgba(90, 69, 69, 0.5);
+    position: absolute;
+    transition: transform .5s linear;
+    backface-visibility: hidden;
+}
+.front-face{
+    transform: rotateY(180deg);
+}
+/*styling buttons*/
+.buttons-group{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    
+}
+.buttons-group a{
+
+    background-color: rgb(0, 255, 4);
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 400;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 590px;
+   
+}
+a{
+   
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 3px 5px rgb(150, 84, 30);
+    box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+   transform: translateY(-5px);
+   box-shadow: 0px 10px 30px 4px rgba(0, 0, 0, 0.25);
+}
+.start_button{
+
+    margin-left: 280px;
+    background-color: burlywood;
+}
+.instructions_button{
+    margin-left: 60px;
+    background-color: burlywood;
+}
+/* Media queries */ 
+
+
+/* Extra large devices (large laptops and desktops, 1500px and up) */
+
+
+@media only screen and (max-width: 1500px){
+    .memory-game
+    {
+        height: 520px;
+        width: 520px;
+        margin-left: 100px;
+        margin-bottom: 400px;
+        top: 20px;
+        }
+      
+        .buttons-group a
+        {
+            width: 170px;
+            height: 40px;
+            display: flex;
+            font-size: 17px;
+            flex-direction: row;  
+            margin-top: 530px;background-color: rgb(255, 0, 187);
+     }
+     .start_button
+        {
+            margin-left: 270px;
+        }
+    .instructions_button{
+    
+        margin-left: 80px;
+            
+        } 
+    }
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media screen and (max-width: 1200px) {
+
+    .memory-game{
+    height: 520px;
+    width: 520px;
+    margin-left: 100px;
+    margin-bottom: 400px;
+    top: 20px;
+}
+  
+    .buttons-group a{
+    width: 170px;
+    height: 40px;
+    display: flex;
+    font-size: 17px;
+    flex-direction: row;  
+    margin-top: 530px;
+    background-color: aqua;
+ }
+ .start_button {
+    margin-left: 260px;
+    }
+    .instructions_button{
+    margin-left: 70px;
+    } }
+
+/* Medium screen sizes from 950px wide and down
+(large laptops and desktops, 950px and up) */
+
+@media only screen and (max-width: 950px){
+    .memory-game{
+    height: 520px;
+    width: 520px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 400px;
+    top: 20px;
+    position: relative;}
+      
+    .buttons-group a{
+        width: 150px;
+        height: 40px;
+    display: flex;
+    font-size: 17px;
+    flex-direction: row;  
+    margin-top: 530px;
+    background-color: blue;  
+     }
+     .start_button{
+         margin-left: 270px;
+        }
+        .instructions_button{
+          margin-left: 90px;
+        } }
+
+@media only screen and (max-width: 600px) {
+    .memory-game{
+        height: 450px;
+        width: 450px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 400px;
+        top: 20px;
+        position: relative;}
+          
+        .buttons-group a{
+        width: 130px;
+        height: 40px;
+        display: flex;
+        font-size: 14px;
+        flex-direction: row;  
+        margin-top: 470px;
+        background-color: rgb(242, 255, 0);  
+         }
+        .start_button{
+        margin-left: 230px;
+            }
+        .instructions_button{
+         margin-left: 80px;
+            } }
+
+            @media only screen and (max-width: 470px) {
+
+                .memory-game{
+                    height: 400px;
+                    width: 380px;
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    margin-bottom: 400px;
+                    top: 40px;
+                    position: relative;}
+                      
+                    .buttons-group a{
+                    width: 120px;
+                    height: 30px;
+                    display: flex;
+                    font-size: 12px;
+                    flex-direction: row;  
+                    margin-top: 420px;
+                    background-color: rgb(96, 84, 157);  
+                     }
+                     .start_button{
+                     margin-left: 190px;
+                        }
+                    .instructions_button{
+                    margin-left: 50px;
+                        } }
+            
+   @media only screen and (max-width: 360px) {
+
+    .memory-game{
+        height: 370px;
+        width: 350px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 400px;
+        top: 60px;
+        position: relative;}
+          
+        .buttons-group a{
+        width: 120px;
+        height: 30px;
+        display: flex;
+        font-size: 12px;
+        flex-direction: row;  
+        margin-top: 400px;
+        background-color: rgb(255, 0, 0);  
+         }
+         .start_button{
+         margin-left: 160px;
+            }
+        .instructions_button{
+        margin-left: 30px;
+            } }
+
